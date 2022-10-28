@@ -1,7 +1,48 @@
 "use strict";
 
+//  Задачи
+function exercise() {
+
+    // 1
+    let a = +prompt('min = ', 10);
+    a == 10 ? alert('a == 10 верно') : alert('a == 10 неверно');
+
+    // 2
+    let min = +prompt('min = ', 20);
+    min >= 0 && min <= 15 ? alert('1 четверть') :
+    min >= 16 && min <= 30 ? alert('2 четверть') :
+    min >= 31 && min <= 45 ? alert('3 четверть') :
+    min >= 46 && min <= 60 ? alert('4 четверть') : () => {};
+
+    // 3
+    // через if
+    let lang = 'ru';
+    let arr;
+    if (lang == 'ru')
+        arr = ['понедельние', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+    else if (lang == 'en')
+        arr = ['monday', 'tuesday', 'wednessday', 'thursday', 'friday', 'saturday', 'sunday'];
+    
+    // через switch
+    switch (lang) {
+        case 'ru':
+            arr = ['понедельние', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+            break;
+        case 'en':
+            arr = ['monday', 'tuesday', 'wednessday', 'thursday', 'friday', 'saturday', 'sunday'];
+            break;
+    }
+
+    // через массив
+    let arr1 = {
+        'ru': ['понедельние', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'], 
+        'en': ['monday', 'tuesday', 'wednessday', 'thursday', 'friday', 'saturday', 'sunday']
+    }
+}
+
+
 // Работа с if-else
-function first() {
+function if_else() {
     let a = +prompt('a = ', 10);
 
     a == 0 ? alert('a == 0 верно') : alert('a == 0 неверно');
@@ -15,8 +56,8 @@ function first() {
 }
 
 // Работа с && (и) и || (или)
-function second() {
-    a = +prompt('a = ', 10);
+function and_or() {
+    let a = +prompt('a = ', 10);
     
     // 1
     a > 0 && a < 5 ? alert('1: верно') : alert('1: неверно');
@@ -28,6 +69,7 @@ function second() {
     }
 
     // 3
+    let b = +prompt('b = ', 1);
     if (a <= 1 && b >= 3) {
         alert( '3: ' + (a + b) );
     } else {
@@ -43,11 +85,12 @@ function second() {
 }
 
 // Задачи на switch-case
-function third() {
+function switch_case() {
     // 1
-    a = +prompt('a = ', 10);
+    let a = +prompt('a = ', 3);
+    let result;
 
-    switch(a) {
+    switch (a) {
         case 1:
             result = 'зима';
             break;
@@ -64,16 +107,20 @@ function third() {
     alert('1: result = ' + result);
 
     // 2
-    day = prompt('day = ', 10);
+    let day = prompt('day = ', 10);
     day >= 1 && day <= 10 ? alert('2: 1') :
     day >= 11 && day <= 20 ? alert('2: 2') : alert('2: 3');
 
     // 3
-    month = prompt('month = ', 2);
+    let month = prompt('month = ', 2);
     month >= 1 && month <= 2 || month == 12 ? alert('3: зима') :
     month >= 3 && month <= 5 ? alert('3: весна') :
     month >= 6 && month <= 8 ? alert('3: лето') :
-    month >= 9 && month <= 11 ? alert('3: осень'): doNothing();
+    month >= 9 && month <= 11 ? alert('3: осень') : doNothing();
+    
+    function doNothing() {
+        // nothing
+    }
 
     // 4 
     let str = 'abcde';
@@ -81,7 +128,7 @@ function third() {
 
     // 5
     str = '12345';
-    switch(str[1]) {
+    switch (str[1]) {
         case '1':
         case '2':
         case '3':
@@ -98,11 +145,10 @@ function third() {
 
     // 7
     str = '894326';
-    str[0] + strp[1] + str[2] == str[3] + str[4] + str[5] ? alert('7: да') : alert('7: нет');
-}
-
-function doNothing() {
-    // -- nothing --
+    if ( str[0] + str[1] + str[2] == str[3] + str[4] + str[5] )
+        alert('7: да')
+    else
+        alert('7: нет');
 }
 
 
